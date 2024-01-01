@@ -47,6 +47,8 @@ func runDay2() {
 func runDay3() {
 	file, _ := loadFile("./day/3/input.txt")
 	lines := strings.Split(string(file), "\n")
-	ans1 := day3.CalculateEngineSum(lines)
+	ans1 := day3.CalculateEngineSumPart1(lines)
+	ans2 := day3.CalculateEngineSumPart2(lines)
 	fmt.Printf("Answer to day 3 part 1 is: %v\n", ans1)
+	fmt.Printf("Answer to day 3 part 2 is: %v\n", ans2)
 }
