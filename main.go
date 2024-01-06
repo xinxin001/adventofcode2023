@@ -9,10 +9,11 @@ import (
 	day2 "github.com/xinxin001/adventofcode2023/day/2"
 	day3 "github.com/xinxin001/adventofcode2023/day/3"
 	day4 "github.com/xinxin001/adventofcode2023/day/4"
+	day5 "github.com/xinxin001/adventofcode2023/day/5"
 )
 
 func main() {
-	runDay4()
+	runDay5()
 }
 
 func loadFile(path string) (string, error) {
@@ -54,6 +55,7 @@ func runDay3() {
 	fmt.Printf("Answer to day 3 part 2 is: %v\n", ans2)
 }
 
+//lint:ignore U1000 Ignore unused function temporarily for debugging
 func runDay4() {
 	file, _ := loadFile("./day/4/input.txt")
 	lines := strings.Split(file, "\n")
@@ -61,4 +63,11 @@ func runDay4() {
 	ans2 := day4.CalculateCardCount(lines)
 	fmt.Printf("Answer to day 4 part 1 is: %v\n", ans1)
 	fmt.Printf("Answer to day 4 part 2 is: %v\n", ans2)
+}
+
+func runDay5() {
+	file, _ := loadFile("./day/5/input.txt")
+	lines := strings.Split(file, "\n\n")
+	ans1 := day5.FindLowestLocationNumber(lines)
+	fmt.Printf("Answer to day 5 part 1 is: %v\n", ans1)
 }
