@@ -8,10 +8,11 @@ import (
 	day1 "github.com/xinxin001/adventofcode2023/day/1"
 	day2 "github.com/xinxin001/adventofcode2023/day/2"
 	day3 "github.com/xinxin001/adventofcode2023/day/3"
+	day4 "github.com/xinxin001/adventofcode2023/day/4"
 )
 
 func main() {
-	runDay3()
+	runDay4()
 }
 
 func loadFile(path string) (string, error) {
@@ -51,4 +52,13 @@ func runDay3() {
 	ans2 := day3.CalculateEngineSumPart2(lines)
 	fmt.Printf("Answer to day 3 part 1 is: %v\n", ans1)
 	fmt.Printf("Answer to day 3 part 2 is: %v\n", ans2)
+}
+
+func runDay4() {
+	file, _ := loadFile("./day/4/input.txt")
+	lines := strings.Split(file, "\n")
+	ans1 := day4.CalculatePointsPart1(lines)
+	ans2 := day4.CalculateCardCount(lines)
+	fmt.Printf("Answer to day 4 part 1 is: %v\n", ans1)
+	fmt.Printf("Answer to day 4 part 2 is: %v\n", ans2)
 }
