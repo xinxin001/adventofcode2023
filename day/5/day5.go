@@ -14,8 +14,8 @@ type SeedInterval struct {
 	destinationRangeStart, sourceRangeStart, rangeLength int
 }
 
-func FindLowestLocationNumber(lines []string) int {
-	var lowestLocation int = int(math.MaxInt)
+func FindLowestLocationNumber(lines []string) (int, int) {
+	lowestPart1, lowestPart2 := int(math.MaxInt), int(math.MaxInt)
 	var seeds []int
 	seedString := strings.Split(lines[0], ": ")[1]
 	for _, val := range strings.Fields(seedString) {
@@ -46,8 +46,13 @@ func FindLowestLocationNumber(lines []string) int {
 		}
 		return seed
 	}
-	for _, s := range seeds {
-		lowestLocation = min(calc(s), lowestLocation)
+	for i, s := range seeds {
+		lowestPart1 = min(calc(s), lowestPart1)
+		if i%2 == 0 {
+			for s := seeds[i]; s < seeds[i]+seeds[i+1]; s++ {
+				lowestPart2 = min(calc(s), lowestPart2)
+			}
+		}
 	}
-	return lowestLocation
+	return lowestPart1, lowestPart2
 }

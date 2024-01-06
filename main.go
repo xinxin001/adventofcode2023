@@ -68,6 +68,7 @@ func runDay4() {
 func runDay5() {
 	file, _ := loadFile("./day/5/input.txt")
 	lines := strings.Split(file, "\n\n")
-	ans1 := day5.FindLowestLocationNumber(lines)
+	ans1, ans2 := day5.FindLowestLocationNumber(lines)
 	fmt.Printf("Answer to day 5 part 1 is: %v\n", ans1)
+	fmt.Printf("Answer to day 5 part 2 is: %v\n", ans2)
 }
